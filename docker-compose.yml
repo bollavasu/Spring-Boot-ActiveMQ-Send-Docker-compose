@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  activemq-service:
+    container_name: activemq-container
+    image: rmohr/activemq
+    ports:
+      - 8161:8161
+      - 61616:61616
+  activemq-send-service:
+    container_name: activemq-send-container
+    image: activemq-send-image
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    links:
+      - activemq-service
+    ports:
+      - 8090:8080

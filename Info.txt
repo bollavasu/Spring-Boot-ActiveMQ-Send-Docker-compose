@@ -1,0 +1,8 @@
+  
+1)mvn clean install
+  
+2)docker-compose up
+
+3)go to ActiveMQ admin console and check the message in the queue
+
+  http://localhost:8161/admin/
